@@ -36,6 +36,7 @@ AudioTrack::~AudioTrack() {
     std::cout << "AudioTrack destructor called for: " << title << std::endl;
     #endif
     // Your code here...
+    delete[] waveform_data;
 }
 
 AudioTrack::AudioTrack(const AudioTrack& other)
@@ -45,6 +46,7 @@ AudioTrack::AudioTrack(const AudioTrack& other)
     std::cout << "AudioTrack copy constructor called for: " << other.title << std::endl;
     #endif
     // Your code here...
+    :title(other.title),artists(other.artists),duration_seconds(),bpm,waveform_size()
 }
 
 AudioTrack& AudioTrack::operator=(const AudioTrack& other) {
